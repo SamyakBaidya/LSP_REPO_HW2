@@ -1,27 +1,30 @@
 package org.howard.edu.lsp.midterm.strategy;
 
 /**
- * Context class that uses a PricingStrategy to calculate the final price.
+ * The Context class that maintains a reference to a PricingStrategy.
+ * This class is responsible for delegating the calculation to the 
+ * currently set strategy.
+ * * @author Samyak Baidya
  */
 public class PriceCalculator {
     private PricingStrategy strategy;
 
     /**
-     * Sets the current pricing strategy.
-     * @param strategy The strategy to be used for calculation.
+     * Updates the pricing strategy at runtime.
+     * * @param strategy the new PricingStrategy to be used for calculations
      */
     public void setStrategy(PricingStrategy strategy) {
         this.strategy = strategy;
     }
 
     /**
-     * Calculates the final price using the assigned strategy.
-     * @param price The original price.
-     * @return The discounted price.
+     * Executes the price calculation using the encapsulated strategy.
+     * * @param price the base price to be processed
+     * @return the final calculated price; returns original price if no strategy is set
      */
     public double calculatePrice(double price) {
         if (strategy == null) {
-            return price; // Default behavior
+            return price;
         }
         return strategy.calculate(price);
     }
