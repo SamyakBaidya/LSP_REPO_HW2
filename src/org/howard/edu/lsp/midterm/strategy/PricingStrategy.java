@@ -1,13 +1,15 @@
 package org.howard.edu.lsp.midterm.strategy;
 
 /**
- * Interface for defining a pricing strategy.
+ * Interface defining the contract for various pricing algorithms.
+ * This represents the "Strategy" in the Strategy Design Pattern.
+ * * @author Samyak Baidya
  */
 public interface PricingStrategy {
     /**
-     * Calculates the price based on a specific strategy.
-     * @param price The original price.
-     * @return The calculated final price.
+     * Calculates the final price for a given base price based on a specific strategy.
+     * * @param price the original base price of the item
+     * @return the calculated final price after applying strategy-specific logic
      */
     double calculate(double price);
 }
