@@ -1,3 +1,0 @@
-# Question 2: Design Explanation
-
-[cite_start]The **Template Method Pattern** is implemented here to define a fixed algorithmic skeleton for report generation within the `Report` abstract class. [cite_start]By defining `generateReport()` as a final method, we enforce a strict workflow—`loadData`, `formatHeader`, `formatBody`, and `formatFooter`—that cannot be altered by subclasses. [cite_start]This design ensures consistency across different report types while allowing subclasses like `StudentReport` and `CourseReport` to provide their own specific data and formatting logic, effectively promoting code reuse and modularity.
